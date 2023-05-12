@@ -1,6 +1,5 @@
 .nav{
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+    background-color: pink;
     height: 50px;
     line-height: 50px;
     position: relative;
@@ -18,4 +17,8 @@
     float: left;
     position: relative;
     margin: 0 20px;
+}
+
+.navLink{
+    font-size: 16px;
 }
