@@ -1,0 +1,21 @@
+.nav{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    z-index: 1000;
+}
+
+.navList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.navList > li {
+    float: left;
+    position: relative;
+    margin: 0 20px;
+}
