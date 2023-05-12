@@ -67,3 +67,7 @@ h2.mainText{
 .saneLink:hover{
     text-decoration: underline;
 }
+
+.secondaryframe{
+    display: none;
+}

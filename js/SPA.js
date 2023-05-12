@@ -11,5 +11,6 @@ function showIndex() {
 
 function showLink() {
   $(".mainframe").hide();
-  $(".secondaryframe").show();
+  $(".secondaryframe").hide();
+  $(".linkframe").show();
 }
