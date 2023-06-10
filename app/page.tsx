@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import MainPage from "./MainPage";
 import Winner from "./winner";
+import React from "react";
 
 export default function Home() {
   const [hasWon, setHasWon] = useState<boolean>(false);
