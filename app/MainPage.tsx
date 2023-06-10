@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState } from "react";
 
 interface FrameProps {
@@ -13,7 +14,7 @@ export default function MainPage(props: FrameProps) {
   const [htmlStoredInMemory, setHtmlStoredInMemory] = useState<Element[]>([]);
 
   function trackPassCode() {
-    let newGuess = [];
+    let newGuess: number[] = [];
     if (key === "2") {
       newGuess = [2];
     } else {
@@ -68,6 +69,18 @@ export default function MainPage(props: FrameProps) {
 
   const buttonKeys = ["1", "2", "3", "4"];
 
+  const information = {
+    title: "Welcome to my Erin's Site",
+    subtitle: "made with react and tailwind",
+    points: [
+      "im a software engineer",
+      "im skilled with react, next, typescript, css, C# and .NET",
+      "im sitecore and contentstack certified, headless CMS work is my specialty",
+    ],
+    paragraph:
+      "feel free to check my code, this was all written by hand, and the conversion is done by js, no visual tricks, no imports or libraries",
+  };
+
   return (
     <div className="flex flex-col mx-5 my-3 flex-0">
       <div id="1" className="flex flex-col border p-3 m-1">
@@ -77,32 +90,23 @@ export default function MainPage(props: FrameProps) {
         <p className="self-end">1</p>
         <div id="2" className="flex flex-col border p-3 mt-2">
           <p className="self-end h-0">2</p>
-          <h1 className="text-4xl text-center mt-2">
-            Welcome to my Erin&apos;s Site
-          </h1>
+          <h1 className="text-4xl text-center mt-2">{information.title}</h1>
           <h2 className="text-sm text-gray-500 text-center">
-            made with react and tailwind
+            {information.subtitle}
           </h2>
         </div>
         <div id="3" className="flex flex-col text-base mt-3 border p-3">
           <p className="self-end h-0">3</p>
           <ul>
-            <li>im a software engineer</li>
-            <li>im skilled with react, next, typescript, css, C# and .NET</li>
-            <li>
-              im sitecore and contentstack certified, headless CMS work is my
-              specialty
-            </li>
+            {information.points.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
           </ul>
         </div>
         <div id="4" className="flex flex-col border p-3 my-3">
           <p className="self-end h-0">4</p>
           <div>
-            <p>
-              feel free to check my code, this was all written by hand, and the
-              conversion is done by js, no visual tricks, no imports or
-              libraries
-            </p>
+            <p>{information.paragraph}</p>
           </div>
         </div>
 
@@ -120,17 +124,6 @@ export default function MainPage(props: FrameProps) {
               </button>
             </div>
           ))}
-          {/* <div className="mx-2">
-            <button
-              id="5"
-              onMouseEnter={(e) => setKeyOnHover(e)}
-              onClick={() => toggle()}
-              disabled={key != "5" && toggledDivId != ""}
-              className="bg-blue-900 rounded disabled:bg-gray-900 hover:bg-blue-700 p-3 w-full select-none"
-            >
-              5
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
